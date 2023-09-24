@@ -14,4 +14,4 @@ all_data = dbconnector.execute('SELECT * FROM ExpenseTracker')
 data = all_data.fetchall()
 # inserting the values iteratively in the tkinter data table
 for val in data:
-data_table.insert('', END, values = val
+  data_table.insert('', END, values = val
