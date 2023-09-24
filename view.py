@@ -18,3 +18,5 @@ val = currentSelectedExpense['values']
 
 # retrieving the date of expenditure from the list
 expenditureDate = datetime.date(int(val[1][:4]), int(val[1][5:7]), int(val[1][8:])
+# setting the listed data in their respective entry fields
+dateField.set_date(expenditureDate) ; payee.set(val[2]) ; description.set(val[3]) ; amount.set(val[4]) ; modeOfPayment.set(val[5])                          
