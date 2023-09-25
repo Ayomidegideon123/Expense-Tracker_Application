@@ -1,0 +1,49 @@
+# ---------------- Adding widgets to the frameR2 frame ----------------
+
+# creating a table to display all the entries
+data_table = ttk.Treeview(
+ frameR2,
+ selectmode = BROWSE,
+ columns = ('ID', 'Date', 'Payee', 'Description', 'Amount', 'Mode of Payment')
+ )
+
+# creating a horizontal scrollbar to the table
+Xaxis_Scrollbar = Scrollbar(
+ data_table,
+ orient = HORIZONTAL,
+ command = data_table.xview
+ )
+
+# creating a vertical scrollbar to the table
+Yaxis_Scrollbar = Scrollbar(
+ data_table,
+ orient = VERTICAL,
+ command = data_table.yview
+ )
+
+# using the pack() method to set the position of the scrollbars
+Xaxis_Scrollbar.pack(side = BOTTOM, fill = X)
+Yaxis_Scrollbar.pack(side = RIGHT, fill = Y)
+
+# configuring the horizontal and vertical scrollbars on the table
+data_table.config(yscrollcommand = Yaxis_Scrollbar.set, xscrollcommand = Xaxis_Scrollbar.set)
+
+# adding different headings to the table
+data_table.heading('ID', text = 'S No.', anchor = CENTER)
+data_table.heading('Date', text = 'Date', anchor = CENTER)
+data_table.heading('Payee', text = 'Payee', anchor = CENTER)
+data_table.heading('Description', text = 'Description', anchor = CENTER)
+data_table.heading('Amount', text = 'Amount', anchor = CENTER)
+data_table.heading('Mode of Payment', text = 'Mode of Payment', anchor = CENTER)
+
+# adding different columns to the table
+data_table.column('#0', width = 0, stretch = NO)
+data_table.column('#1', width = 50, stretch = NO)
+data_table.column('#2', width = 95, stretch = NO)
+data_table.column('#3', width = 150, stretch = NO)
+data_table.column('#4', width = 450, stretch = NO)
+data_table.column('#5', width = 135, stretch = NO)
+data_table.column('#6', width = 140, stretch = NO)
+
+# using the place() method to set the position of the table on the main window screen
+data_table.place(relx = 0, y = 0, relheight = 1, relwidth = 1)
