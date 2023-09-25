@@ -1,0 +1,130 @@
+# ---------------- Adding widgets to the frameL2 frame-------
+
+# creating some labels to ask user to enter the required data
+# date label
+dateLabel = Label(
+frameL2,
+text = "Date:",
+font = ("consolas", "11", "bold"),
+bg = "#FFF8DC",
+fg = "#000000"
+)
+
+# description label
+descriptionLabel = Label(
+frameL2,
+text = "Description:",
+font = ("consolas", "11", "bold"),
+bg = "#FFF8DC",
+fg = "#000000"
+)
+
+# amount label
+amountLabel = Label(
+frameL2,
+text = "Amount:",
+font = ("consolas", "11", "bold"),
+bg = "#FFF8DC",
+fg = "#000000"
+)
+
+# payee label
+payeeLabel = Label(
+ frameL2,
+ text = "Payee:",
+ font = ("consolas", "11", "bold"),
+ bg = "#FFF8DC",
+ fg = "#000000"
+ )
+
+# mode of payment label
+modeLabel = Label(
+ frameL2,
+ text = "Mode of \nPayment:",
+ font = ("consolas", "11", "bold"),
+ bg = "#FFF8DC",
+ fg = "#000000"
+
+ )
+
+# using the grid() method to set the position of the above labels in the grid format
+dateLabel.grid(row = 0, column = 0, sticky = W, padx = 10, pady = 10)
+descriptionLabel.grid(row = 1, column = 0, sticky = W, padx = 10, pady = 10)
+amountLabel.grid(row = 2, column = 0, sticky = W, padx = 10, pady = 10)
+payeeLabel.grid(row = 3, column = 0, sticky = W, padx = 10, pady = 10)
+modeLabel.grid(row = 4, column = 0, sticky = W, padx = 10, pady = 10)
+
+# instantiating the StringVar() class to retrieve the data in the string format from the user
+description = StringVar()
+payee = StringVar()
+modeOfPayment = StringVar(value = "Cash")
+# instantiating the DoubleVar() class to retrieve the amount detail in double datatype
+amount = DoubleVar()
+
+# creating a drop-down calendar for the user to enter the data
+dateField = DateEntry(
+ frameL2,
+ date = datetime.datetime.now().date(),
+ font = ("consolas", "11"),
+ relief = GROOVE
+ )
+
+# creating entry fields to enter the labelled data
+# field to enter description
+descriptionField = Entry(
+ frameL2,
+ text = description,
+ width = 20,
+
+ font = ("consolas", "11"),
+ bg = "#FFFFFF",
+ fg = "#000000",
+ relief = GROOVE
+)
+
+# field to enter the amount
+amountField = Entry(
+ frameL2,
+  text = amount,
+  width = 20,
+ font = ("consolas", "11"),
+ bg = "#FFFFFF",
+ fg = "#000000",
+ relief = GROOVE
+ )
+
+9# field to enter payee information
+payeeField = Entry(
+ frameL2,
+ text = payee,
+ width = 20,
+ font = ("consolas", "11"),
+ bg = "#FFFFFF",
+ fg = "#000000",
+ relief = GROOVE
+ )
+
+ # creating a drop-down menu to enter the mode of payment
+ modeField = OptionMenu(
+ frameL2,
+
+ modeOfPayment,
+ *['Cash', 'Cheque', 'Credit Card', 'Debit Card', 'UPI', 'Paytm', 'Google Pay',
+'PhonePe', 'Razorpay']
+ )
+ # using the config() method to configure the width, font style, and background
+
+color of the option menu
+ modeField.config(
+ width = 15,
+font = ("consolas", "10"),
+ relief = GROOVE,
+ bg = "#FFFFFF"
+)
+
+ # using the grid() method to set the position of the above widgets in the grid format
+ dateField.grid(row = 0, column = 1, sticky = W, padx = 10, pady = 10)
+ descriptionField.grid(row = 1, column = 1, sticky = W, padx = 10, pady = 10)
+ amountField.grid(row = 2, column = 1, sticky = W, padx = 10, pady = 10)
+ payeeField.grid(row = 3, column = 1, sticky = W, padx = 10, pady = 10)
+ modeField.grid(row = 4, column = 1, sticky = W, padx = 10, pady = 10)
