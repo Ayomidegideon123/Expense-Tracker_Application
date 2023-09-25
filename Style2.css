@@ -1,0 +1,49 @@
+# ---------------- Adding widgets to the frameL3 frame ----------------
+
+ # creating buttons to manipulate data
+ # insert button
+ insertButton = Button(
+ frameL3,
+ text = "Add Expense",
+ font = ("Bahnschrift Condensed", "13"),
+ width = 30,
+ bg = "#90EE90",
+ fg = "#000000",
+ relief = GROOVE,
+ activebackground = "#008000",
+ activeforeground = "#98FB98",
+ command = addAnotherExpense
+ )
+
+# convert button
+convertButton = Button(
+ frameL3,
+ text = "Convert to Text before Adding",
+ font = ("Bahnschrift Condensed", "13"),
+ width = 30,
+ bg = "#90EE90",
+ fg = "#000000",
+ relief = GROOVE,
+ activebackground = "#008000",
+ activeforeground = "#98FB98",
+ command = expenseToWordsBeforeAdding
+ )
+
+# reset button
+resetButton = Button(
+ frameL3,
+ text = "Reset the fields",
+ font = ("Bahnschrift Condensed", "13"),
+ width = 30,
+ bg = "#FF0000",
+ fg = "#FFFFFF",
+ relief = GROOVE,
+ activebackground = "#8B0000",
+ activeforeground = "#FFB4B4",
+ command = clearFields
+ )
+
+# using the grid() method to set the position of the above buttons
+insertButton.grid(row = 0, column = 0, sticky = W, padx = 50, pady = 10)
+convertButton.grid(row = 1, column = 0, sticky = W, padx = 50, pady = 10)
+resetButton.grid(row = 2, column = 0, sticky = W, padx = 50, pady = 10)
