@@ -1,0 +1,79 @@
+# ---------------- Adding widgets to the frameR1 frame ----------------
+
+ # creating buttons to manipulate data
+ # view button
+ viewButton = Button(
+ frameR1,
+ text = "View Selected Expense\'s Details",
+ font = ("Bahnschrift Condensed", "13"),
+ width = 35,
+ bg = "#FFDEAD",
+ fg = "#000000",
+ relief = GROOVE,
+ activebackground = "#A0522D",
+ activeforeground = "#FFF8DC",
+ command = viewExpenseInfo
+ )
+
+# edit button
+editButton = Button(
+ frameR1,
+ text = "Edit Selected Expense",
+ font = ("Bahnschrift Condensed", "13"),
+ width = 35,
+ bg = "#FFDEAD",
+ fg = "#000000",
+ relief = GROOVE,
+ activebackground = "#A0522D",
+ activeforeground = "#FFF8DC",
+ command = editExpense
+ )
+
+# convert button
+convertSelectedButton = Button(
+frameR1,
+ text = "Convert Selected Expense to a Sentence",
+ font = ("Bahnschrift Condensed", "13"),
+ width = 35,
+ bg = "#FFDEAD",
+ fg = "#000000",
+ relief = GROOVE,
+ activebackground = "#A0522D",
+ activeforeground = "#FFF8DC",
+ command = selectedExpenseToWords
+ )
+
+# delete button
+deleteButton = Button(
+ frameR1,
+ text = "Delete Selected Expense",
+ font = ("Bahnschrift Condensed", "13"),
+ width = 35,
+ bg = "#FFDEAD",
+ fg = "#000000",
+ relief = GROOVE,
+ activebackground = "#A0522D",
+ activeforeground = "#FFF8DC",
+ command = removeExpense
+ )
+
+# delete all button
+deleteAllButton = Button(
+ frameR1,
+ text = "Delete All Expense",
+ font = ("Bahnschrift Condensed", "13"),
+ width = 35,
+ bg = "#FFDEAD",
+ fg = "#000000",
+ relief = GROOVE,
+ activebackground = "#A0522D",
+ activeforeground = "#FFF8DC",
+ command = removeAllExpenses
+ )
+
+# using the grid() method to set the position of the above buttons
+viewButton.grid(row = 0, column = 0, sticky = W, padx = 10, pady = 10)
+editButton.grid(row = 0, column = 1, sticky = W, padx = 10, pady = 10)
+convertSelectedButton.grid(row = 0, column = 2, sticky = W, padx = 10, pady = 10)
+deleteButton.grid(row = 1, column = 0, sticky = W, padx = 10, pady = 10)
+deleteAllButton.grid(row = 1, column = 1, sticky = W, padx = 10, pady = 10)
